@@ -1,0 +1,683 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Virtual Career Counsellor - Find Your Perfect Career Path</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(238, 90, 36, 0.4);
+        }
+        
+        .stats-counter {
+            animation: countUp 2s ease-out;
+        }
+        
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold gradient-bg bg-clip-text text-transparent">
+                        🤖 AI Career Counsellor
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-gray-600 hover:text-blue-600 transition-colors">Features</a>
+                    <a href="#how-it-works" class="text-gray-600 hover:text-blue-600 transition-colors">How It Works</a>
+                    <!-- <a href="#testimonials" class="text-gray-600 hover:text-blue-600 transition-colors">Success Stories</a> -->
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="floating-element mb-8">
+                <div class="text-6xl mb-4">🎯</div>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                Discover Your Perfect <br>
+                <span class="text-yellow-300">Career Path</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
+                Our AI-powered career counsellor analyzes your interests, skills, and personality to recommend personalized career paths with 95% accuracy.
+            </p>
+            <!-- <button id="takeAssessmentBtn" class="cta-button text-white px-8 py-4 rounded-full text-xl font-semibold inline-flex items-center space-x-2 mb-8">
+                <span>🚀 Take Free Assessment</span>
+            </button> -->
+            <a href="{% url 'questions' %}" 
+             class="cta-button text-white px-8 py-4 rounded-full text-xl font-semibold inline-flex items-center space-x-2 mb-8">
+             🚀 Take Free Assessment
+            </a>
+
+            <p class="text-blue-200 text-sm">✨ Takes only 5 minutes • No registration required • Instant results</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-white py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div class="stats-counter">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">50K+</div>
+                    <div class="text-gray-600">Career Assessments</div>
+                </div>
+                <div class="stats-counter">
+                    <div class="text-4xl font-bold text-green-600 mb-2">95%</div>
+                    <div class="text-gray-600">Accuracy Rate</div>
+                </div>
+                <div class="stats-counter">
+                    <div class="text-4xl font-bold text-purple-600 mb-2">200+</div>
+                    <div class="text-gray-600">Career Paths</div>
+                </div>
+                <div class="stats-counter">
+                    <div class="text-4xl font-bold text-orange-600 mb-2">4.9★</div>
+                    <div class="text-gray-600">User Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-4 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    Why Choose Our AI Career Counsellor?
+                </h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Advanced AI technology meets personalized career guidance to help you make informed decisions about your future.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card bg-white rounded-xl p-8 text-center shadow-lg">
+                    <div class="text-5xl mb-4">🧠</div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">AI-Powered Analysis</h3>
+                    <p class="text-gray-600">Our advanced NLP algorithms analyze your responses to understand your true interests, skills, and personality traits.</p>
+                </div>
+                
+                <div class="feature-card bg-white rounded-xl p-8 text-center shadow-lg">
+                    <div class="text-5xl mb-4">📊</div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Personalized Recommendations</h3>
+                    <p class="text-gray-600">Get tailored career suggestions with match scores, salary ranges, and growth prospects based on your unique profile.</p>
+                </div>
+                
+                <div class="feature-card bg-white rounded-xl p-8 text-center shadow-lg">
+                    <div class="text-5xl mb-4">🎯</div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Instant Results</h3>
+                    <p class="text-gray-600">Receive comprehensive career recommendations immediately after completing your assessment - no waiting required.</p>
+                </div>
+                
+                <div class="feature-card bg-white rounded-xl p-8 text-center shadow-lg">
+                    <div class="text-5xl mb-4">💼</div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Industry Insights</h3>
+                    <p class="text-gray-600">Access detailed information about job markets, required skills, and career progression paths for each recommendation.</p>
+                </div>
+                
+                <div class="feature-card bg-white rounded-xl p-8 text-center shadow-lg">
+                    <div class="text-5xl mb-4">🔄</div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Continuous Learning</h3>
+                    <p class="text-gray-600">Our AI continuously improves its recommendations based on user feedback and industry trends.</p>
+                </div>
+                
+                <div class="feature-card bg-white rounded-xl p-8 text-center shadow-lg">
+                    <div class="text-5xl mb-4">🔒</div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Privacy First</h3>
+                    <p class="text-gray-600">Your data is completely secure and private. We never share your personal information with third parties.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    How It Works
+                </h2>
+                <p class="text-xl text-gray-600">Simple, fast, and accurate career guidance in just 3 steps</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-blue-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-blue-600">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Share Your Interests</h3>
+                    <p class="text-gray-600">Tell our AI about your interests, skills, values, and career preferences through natural conversation.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-green-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-green-600">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">AI Analysis</h3>
+                    <p class="text-gray-600">Our advanced algorithms analyze your responses and match them with our comprehensive career database.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-purple-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-purple-600">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Get Recommendations</h3>
+                    <p class="text-gray-600">Receive personalized career recommendations with detailed insights and actionable next steps.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section
+    <section id="testimonials" class="py-20 px-4 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    Success Stories
+                </h2>
+                <p class="text-xl text-gray-600">See how our AI has helped thousands find their dream careers</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                            👩‍💻
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Sarah Chen</h4>
+                            <p class="text-gray-600 text-sm">Data Scientist</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"The AI perfectly identified my passion for data analysis. I'm now working at a top tech company and loving every day!"</p>
+                    <div class="text-yellow-400">⭐⭐⭐⭐⭐</div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                            👨‍🎨
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Marcus Johnson</h4>
+                            <p class="text-gray-600 text-sm">UX Designer</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"I was stuck in accounting but the assessment revealed my creative potential. Now I'm a successful UX designer!"</p>
+                    <div class="text-yellow-400">⭐⭐⭐⭐⭐</div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                            👩‍⚕️
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Emily Rodriguez</h4>
+                            <p class="text-gray-600 text-sm">Healthcare Manager</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"The recommendations opened my eyes to healthcare management. I found the perfect balance of helping people and leadership!"</p>
+                    <div class="text-yellow-400">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- CTA Section -->
+    <section class="gradient-bg text-white py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                Ready to Discover Your Perfect Career?
+            </h2>
+            <!-- <p class="text-xl mb-8 text-blue-100">
+                Join thousands of professionals who have found their dream careers with our AI guidance.
+            </p> -->
+            <button id="takeAssessmentBtn2" class="cta-button text-white px-8 py-4 rounded-full text-xl font-semibold inline-flex items-center space-x-2 mb-4">
+                <span>🚀 Start Your Free Assessment</span>
+            </button>
+            <p class="text-blue-200 text-sm">No credit card required • Results in 5 minutes • 100% Free</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-800 text-white py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">AI Career Counsellor</h3>
+                    <p class="text-gray-400">Empowering careers through artificial intelligence and personalized guidance.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#features" class="hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#how-it-works" class="hover:text-white transition-colors">How It Works</a></li>
+                        <li><a href="#testimonials" class="hover:text-white transition-colors">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>📧 support@aicareer.com</li>
+                        <li>📞 1-800-AI-CAREER</li>
+                        <li>🌐 www.aicareer.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 AI Career Counsellor. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Assessment Modal -->
+    <div id="assessmentModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="gradient-bg text-white p-6 rounded-t-xl">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-2xl font-bold">🚀 Career Assessment</h3>
+                    <button id="closeModal" class="text-white hover:text-gray-200 text-2xl">&times;</button>
+                </div>
+                <p class="text-blue-100 mt-2">Let's discover your perfect career path together!</p>
+            </div>
+            
+            <div class="p-6">
+                <div id="chatInterface">
+                    <div id="chatMessages" class="h-64 overflow-y-auto mb-4 space-y-3 border rounded-lg p-4 bg-gray-50">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 rounded-full p-2 flex-shrink-0">🤖</div>
+                            <div class="bg-blue-50 rounded-lg p-3">
+                                <p class="text-gray-800">Hi! I'm your AI Career Counsellor. Let's start by learning about you. What are your main interests or what kind of work excites you?</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-3">
+                        <input 
+                            type="text" 
+                            id="assessmentInput" 
+                            placeholder="Tell me about your interests, skills, or career goals..."
+                            class="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        >
+                        <button id="sendAssessment" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium">
+                            Send
+                        </button>
+                    </div>
+                    
+                    <div class="mt-3 flex flex-wrap gap-2">
+                        <button class="suggestion-btn bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">
+                            I love solving problems
+                        </button>
+                        <button class="suggestion-btn bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">
+                            I'm good with people
+                        </button>
+                        <button class="suggestion-btn bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">
+                            I enjoy being creative
+                        </button>
+                    </div>
+                </div>
+                
+                <div id="resultsSection" class="hidden">
+                    <h4 class="text-xl font-semibold mb-4 text-gray-800">🎯 Your Career Recommendations</h4>
+                    <div id="assessmentResults" class="space-y-4"></div>
+                    <div class="mt-6 text-center">
+                        <button id="retakeAssessment" class="bg-gray-600 hover:bg-gray-700 text-white px-6 py-2 rounded-lg mr-3">
+                            Retake Assessment
+                        </button>
+                        <button id="downloadResults" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg">
+                            Download Results
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Assessment Questions - Add your questions here
+        const assessmentQuestions = [
+            // Add your questions here like this:
+            // "What are your main interests and hobbies?",
+            // "What type of work environment do you prefer?",
+            // "What motivates you most in your career?",
+            // Add more questions...
+        ];
+
+       
+
+        // Assessment variables
+        let currentQuestionIndex = 0;
+        let userAnswers = [];
+       
+
+        // Modal functionality
+        const modal = document.getElementById('assessmentModal');
+        const takeAssessmentBtns = [document.getElementById('takeAssessmentBtn'), document.getElementById('takeAssessmentBtn2')];
+        const closeModal = document.getElementById('closeModal');
+        const chatMessages = document.getElementById('chatMessages');
+        const assessmentInput = document.getElementById('assessmentInput');
+        const sendAssessment = document.getElementById('sendAssessment');
+        const chatInterface = document.getElementById('chatInterface');
+        const resultsSection = document.getElementById('resultsSection');
+        const assessmentResults = document.getElementById('assessmentResults');
+        const retakeAssessment = document.getElementById('retakeAssessment');
+        const downloadResults = document.getElementById('downloadResults');
+
+        // Event listeners
+        takeAssessmentBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                startAssessment();
+            });
+        });
+
+        closeModal.addEventListener('click', closeAssessmentModal);
+        
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeAssessmentModal();
+        });
+
+        retakeAssessment.addEventListener('click', () => {
+            currentQuestionIndex = 0;
+            userAnswers = [];
+            categoryScores = { data: 0, creative: 0, helping: 0, technology: 0, business: 0 };
+            chatInterface.classList.remove('hidden');
+            resultsSection.classList.add('hidden');
+            startAssessment();
+        });
+
+        downloadResults.addEventListener('click', () => {
+            // Create a detailed text report
+            let report = "AI Career Counsellor - Assessment Results\n";
+            report += "=====================================\n\n";
+            report += "Assessment Date: " + new Date().toLocaleDateString() + "\n\n";
+            report += "Your Answers:\n";
+            userAnswers.forEach((answer, index) => {
+                report += `${index + 1}. ${assessmentQuestions[index]}\n`;
+                report += `   Answer: ${answer}\n\n`;
+            });
+            report += "\nYour Career Recommendations:\n\n";
+            
+            const results = assessmentResults.children;
+            for (let i = 0; i < results.length; i++) {
+                const card = results[i];
+                const title = card.querySelector('h5').textContent;
+                const description = card.querySelector('p').textContent;
+                const match = card.querySelector('.bg-green-100').textContent;
+                const salary = card.querySelector('.text-blue-600').textContent;
+                const growth = card.querySelector('.text-green-600').textContent;
+                report += `${i + 1}. ${title} (${match})\n`;
+                report += `   ${description}\n`;
+                report += `   ${salary}\n`;
+                report += `   ${growth}\n\n`;
+            }
+            
+            const blob = new Blob([report], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'career-assessment-results.txt';
+            a.click();
+            URL.revokeObjectURL(url);
+        });
+
+        function closeAssessmentModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function startAssessment() {
+            if (!assessmentQuestions || assessmentQuestions.length === 0) {
+                chatMessages.innerHTML = `
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-red-100 rounded-full p-2 flex-shrink-0">⚠️</div>
+                        <div class="bg-red-50 rounded-lg p-3">
+                            <p class="text-gray-800">No questions have been added yet. Please add your questions to the assessmentQuestions array.</p>
+                            <p class="text-gray-600 text-sm mt-2">Add questions like: "What are your main interests?"</p>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+            
+            currentQuestionIndex = 0;
+            userAnswers = [];
+            categoryScores = { data: 0, creative: 0, helping: 0, technology: 0, business: 0 };
+            displayCurrentQuestion();
+        }
+
+        function displayCurrentQuestion() {
+            const question = assessmentQuestions[currentQuestionIndex];
+            
+            chatMessages.innerHTML = `
+                <div class="flex items-start space-x-3 mb-4">
+                    <div class="bg-blue-100 rounded-full p-2 flex-shrink-0">🤖</div>
+                    <div class="bg-blue-50 rounded-lg p-4 max-w-full">
+                        <div class="flex justify-between items-center mb-3">
+                            <h4 class="font-semibold text-gray-800">Question ${currentQuestionIndex + 1} of ${assessmentQuestions.length}</h4>
+                            <div class="bg-blue-200 text-blue-800 text-xs px-2 py-1 rounded-full">
+                                ${Math.round(((currentQuestionIndex) / assessmentQuestions.length) * 100)}% Complete
+                            </div>
+                        </div>
+                        <p class="text-gray-800 mb-4">${question}</p>
+                        <div class="space-y-3">
+                            <textarea 
+                                id="textAnswer" 
+                                placeholder="Please share your thoughts..."
+                                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                rows="4"
+                            ></textarea>
+                            <button 
+                                id="submitTextAnswer"
+                                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors"
+                            >
+                                ${currentQuestionIndex === assessmentQuestions.length - 1 ? 'Complete Assessment' : 'Next Question →'}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('submitTextAnswer').addEventListener('click', () => {
+                const textAnswer = document.getElementById('textAnswer').value.trim();
+                if (textAnswer) {
+                    selectOption({ text: textAnswer });
+                } else {
+                    alert('Please provide an answer before continuing.');
+                }
+            });
+
+            // Hide input area during questions
+            assessmentInput.style.display = 'none';
+            sendAssessment.style.display = 'none';
+            document.querySelector('.mt-3').style.display = 'none';
+        }
+
+        function selectOption(selectedOption) {
+            userAnswers.push(selectedOption.text);
+            
+            // Simple keyword-based scoring for open answers
+            const answer = selectedOption.text.toLowerCase();
+            
+            // Data-related keywords
+            if (answer.includes('data') || answer.includes('analysis') || answer.includes('research') || 
+                answer.includes('statistics') || answer.includes('numbers') || answer.includes('analytics')) {
+                categoryScores.data += 2;
+            }
+            
+            // Creative keywords
+            if (answer.includes('creative') || answer.includes('design') || answer.includes('art') || 
+                answer.includes('music') || answer.includes('writing') || answer.includes('innovative')) {
+                categoryScores.creative += 2;
+            }
+            
+            // Helping keywords
+            if (answer.includes('help') || answer.includes('people') || answer.includes('community') || 
+                answer.includes('support') || answer.includes('care') || answer.includes('service')) {
+                categoryScores.helping += 2;
+            }
+            
+            // Technology keywords
+            if (answer.includes('technology') || answer.includes('coding') || answer.includes('programming') || 
+                answer.includes('software') || answer.includes('computer') || answer.includes('tech')) {
+                categoryScores.technology += 2;
+            }
+            
+            // Business keywords
+            if (answer.includes('business') || answer.includes('management') || answer.includes('leadership') || 
+                answer.includes('strategy') || answer.includes('sales') || answer.includes('marketing')) {
+                categoryScores.business += 2;
+            }
+
+            // Show selected answer
+            const selectedDiv = document.createElement('div');
+            selectedDiv.className = 'flex items-start space-x-3 mt-4';
+            selectedDiv.innerHTML = `
+                <div class="bg-green-100 rounded-full p-2 flex-shrink-0">👤</div>
+                <div class="bg-green-50 rounded-lg p-3">
+                    <p class="text-gray-800">${selectedOption.text}</p>
+                </div>
+            `;
+            chatMessages.appendChild(selectedDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Move to next question or show results
+            setTimeout(() => {
+                currentQuestionIndex++;
+                if (currentQuestionIndex < assessmentQuestions.length) {
+                    displayCurrentQuestion();
+                } else {
+                    showAssessmentResults();
+                }
+            }, 1000);
+        }
+
+        function showAssessmentResults() {
+            // Find top categories based on scores
+            const sortedCategories = Object.entries(categoryScores)
+                .sort(([,a], [,b]) => b - a)
+                .filter(([,score]) => score > 0);
+
+            // Display results
+            chatInterface.classList.add('hidden');
+            resultsSection.classList.remove('hidden');
+            
+            assessmentResults.innerHTML = '';
+            
+            // Get careers from top 2 categories
+            const topCategories = sortedCategories.slice(0, 2);
+            let allRecommendations = [];
+            
+            topCategories.forEach(([category, score]) => {
+                if (careerDatabase[category]) {
+                    careerDatabase[category].careers.forEach(career => {
+                        // Calculate match percentage based on category score
+                        const matchPercentage = Math.min(95, Math.max(70, career.match - (10 - score)));
+                        allRecommendations.push({
+                            ...career,
+                            match: matchPercentage,
+                            categoryScore: score
+                        });
+                    });
+                }
+            });
+
+            // Sort by match percentage and take top 6
+            allRecommendations.sort((a, b) => b.match - a.match);
+            const topRecommendations = allRecommendations.slice(0, 6);
+
+            if (topRecommendations.length === 0) {
+                // Fallback recommendations
+                topRecommendations.push(...careerDatabase.technology.careers.slice(0, 3));
+            }
+
+            topRecommendations.forEach(career => {
+                const careerCard = document.createElement('div');
+                careerCard.className = 'bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-4 border border-blue-100';
+                careerCard.innerHTML = `
+                    <div class="flex justify-between items-start mb-2">
+                        <h5 class="font-semibold text-gray-800">${career.title}</h5>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">${Math.round(career.match)}% match</span>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-2">${career.description}</p>
+                    <div class="flex justify-between text-sm">
+                        <span class="text-blue-600 font-medium">${career.salary}</span>
+                        <span class="text-green-600">Growth: ${career.growth}</span>
+                    </div>
+                `;
+                assessmentResults.appendChild(careerCard);
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9712b8c313e8ff61',t:'MTc1NTUzMzg1MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
